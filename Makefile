@@ -1,4 +1,5 @@
 PKG_NAME := pyflakes
-URL := https://pypi.python.org/packages/source/p/pyflakes/pyflakes-0.8.1.tar.gz
+URL := http://pypi.debian.net/pyflakes/pyflakes-1.2.3.tar.gz
+ARCHIVES :=
 
 include ../common/Makefile.common
