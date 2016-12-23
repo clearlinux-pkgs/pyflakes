@@ -4,7 +4,7 @@
 #
 Name     : pyflakes
 Version  : 1.3.0
-Release  : 18
+Release  : 19
 URL      : http://pypi.debian.net/pyflakes/pyflakes-1.3.0.tar.gz
 Source0  : http://pypi.debian.net/pyflakes/pyflakes-1.3.0.tar.gz
 Summary  : passive checker of Python programs
