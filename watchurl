@@ -1,4 +1,0 @@
-# openstack Kilo needs version == 0.8.1
-# once they update requirement, we can push >=0.8.1 versions
-# see https://github.com/openstack/requirements/blob/stable/kilo/global-requirements.txt
-watchurl=https://pypi.python.org/packages/source/p/pyflakes/pyflakes-0.8.1.tar.gz
