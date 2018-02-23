@@ -6,7 +6,7 @@
 #
 Name     : pyflakes
 Version  : 1.5.0
-Release  : 32
+Release  : 33
 URL      : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz
 Source0  : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz
 Source99 : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz.asc
@@ -14,7 +14,6 @@ Summary  : passive checker of Python programs
 Group    : Development/Tools
 License  : MIT
 Requires: pyflakes-bin
-Requires: pyflakes-legacypython
 Requires: pyflakes-python3
 Requires: pyflakes-python
 BuildRequires : pbr
@@ -53,7 +52,6 @@ legacypython components for the pyflakes package.
 %package python
 Summary: python components for the pyflakes package.
 Group: Default
-Requires: pyflakes-legacypython
 Requires: pyflakes-python3
 
 %description python
@@ -77,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507169167
+export SOURCE_DATE_EPOCH=1519346281
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -87,7 +85,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1507169167
+export SOURCE_DATE_EPOCH=1519346281
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
