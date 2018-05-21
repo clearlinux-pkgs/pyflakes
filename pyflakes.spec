@@ -6,7 +6,7 @@
 #
 Name     : pyflakes
 Version  : 1.5.0
-Release  : 35
+Release  : 36
 URL      : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz
 Source0  : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz
 Source99 : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz.asc
