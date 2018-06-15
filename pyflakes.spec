@@ -18,7 +18,7 @@ Requires: pyflakes-python3
 Requires: pyflakes-python
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
