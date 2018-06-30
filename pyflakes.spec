@@ -6,7 +6,7 @@
 #
 Name     : pyflakes
 Version  : 1.5.0
-Release  : 38
+Release  : 39
 URL      : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz
 Source0  : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz
 Source99 : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz.asc
@@ -15,10 +15,11 @@ Group    : Development/Tools
 License  : MIT
 Requires: pyflakes-bin
 Requires: pyflakes-python3
+Requires: pyflakes-license
 Requires: pyflakes-python
 BuildRequires : pbr
 BuildRequires : pip
-
+BuildRequires : python-core
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
@@ -35,6 +36,7 @@ Pyflakes
 %package bin
 Summary: bin components for the pyflakes package.
 Group: Binaries
+Requires: pyflakes-license
 
 %description bin
 bin components for the pyflakes package.
@@ -47,6 +49,14 @@ Requires: python-core
 
 %description legacypython
 legacypython components for the pyflakes package.
+
+
+%package license
+Summary: license components for the pyflakes package.
+Group: Default
+
+%description license
+license components for the pyflakes package.
 
 
 %package python
@@ -75,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1519346281
+export SOURCE_DATE_EPOCH=1530329269
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -83,10 +93,12 @@ python3 setup.py build -b py3
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test
+PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1519346281
+export SOURCE_DATE_EPOCH=1530329269
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/pyflakes
+cp LICENSE %{buildroot}/usr/share/doc/pyflakes/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -103,6 +115,10 @@ echo ----[ mark ]----
 %files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/pyflakes/LICENSE
 
 %files python
 %defattr(-,root,root,-)
