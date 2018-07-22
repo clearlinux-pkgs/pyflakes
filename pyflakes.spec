@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x0294A902A6830C07 (indigo@keybase.io)
 #
 Name     : pyflakes
-Version  : 1.5.0
-Release  : 44
-URL      : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz
-Source0  : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz
-Source99 : http://pypi.debian.net/pyflakes/pyflakes-1.5.0.tar.gz.asc
+Version  : 2.0.0
+Release  : 45
+URL      : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz
+Source99 : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz.asc
 Summary  : passive checker of Python programs
 Group    : Development/Tools
 License  : MIT
@@ -17,6 +17,7 @@ Requires: pyflakes-bin
 Requires: pyflakes-python3
 Requires: pyflakes-license
 Requires: pyflakes-python
+BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-core
@@ -80,14 +81,14 @@ python3 components for the pyflakes package.
 
 
 %prep
-%setup -q -n pyflakes-1.5.0
+%setup -q -n pyflakes-2.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530376186
+export SOURCE_DATE_EPOCH=1532241502
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -97,7 +98,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1530376186
+export SOURCE_DATE_EPOCH=1532241502
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/pyflakes
 cp LICENSE %{buildroot}/usr/share/doc/pyflakes/LICENSE
