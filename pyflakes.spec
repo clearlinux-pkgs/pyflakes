@@ -6,7 +6,7 @@
 #
 Name     : pyflakes
 Version  : 2.0.0
-Release  : 47
+Release  : 48
 URL      : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz
 Source99 : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz.asc
@@ -84,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532978673
+export SOURCE_DATE_EPOCH=1532979530
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -94,7 +94,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1532978673
+export SOURCE_DATE_EPOCH=1532979530
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/pyflakes
 cp LICENSE %{buildroot}/usr/share/doc/pyflakes/LICENSE
