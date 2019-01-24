@@ -5,37 +5,33 @@
 # Source0 file verified with key 0x0294A902A6830C07 (indigo@keybase.io)
 #
 Name     : pyflakes
-Version  : 2.0.0
-Release  : 51
-URL      : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz
-Source99 : https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz.asc
+Version  : 2.1.0
+Release  : 52
+URL      : https://files.pythonhosted.org/packages/48/6d/7bfd617b21292397e10e24af4cf42947a359b0c425b66f194cf5d14b1444/pyflakes-2.1.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/48/6d/7bfd617b21292397e10e24af4cf42947a359b0c425b66f194cf5d14b1444/pyflakes-2.1.0.tar.gz
+Source99 : https://files.pythonhosted.org/packages/48/6d/7bfd617b21292397e10e24af4cf42947a359b0c425b66f194cf5d14b1444/pyflakes-2.1.0.tar.gz.asc
 Summary  : passive checker of Python programs
 Group    : Development/Tools
 License  : MIT
-Requires: pyflakes-bin
-Requires: pyflakes-python3
-Requires: pyflakes-license
-Requires: pyflakes-python
+Requires: pyflakes-bin = %{version}-%{release}
+Requires: pyflakes-license = %{version}-%{release}
+Requires: pyflakes-python = %{version}-%{release}
+Requires: pyflakes-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
 BuildRequires : python-core
 BuildRequires : setuptools-legacypython
 
 %description
+========
 Pyflakes
-        ========
-        
-        A simple program which checks Python source files for errors.
-        
-        Pyflakes analyzes programs and detects various errors.  It works by
-        parsing the source file, not importing it, so it is safe to use on
-        modules with side effects.  It's also much faster.
+========
+A simple program which checks Python source files for errors.
 
 %package bin
 Summary: bin components for the pyflakes package.
 Group: Binaries
-Requires: pyflakes-license
+Requires: pyflakes-license = %{version}-%{release}
 
 %description bin
 bin components for the pyflakes package.
@@ -61,7 +57,7 @@ license components for the pyflakes package.
 %package python
 Summary: python components for the pyflakes package.
 Group: Default
-Requires: pyflakes-python3
+Requires: pyflakes-python3 = %{version}-%{release}
 
 %description python
 python components for the pyflakes package.
@@ -77,14 +73,14 @@ python3 components for the pyflakes package.
 
 
 %prep
-%setup -q -n pyflakes-2.0.0
+%setup -q -n pyflakes-2.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533001403
+export SOURCE_DATE_EPOCH=1548340692
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -94,10 +90,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1533001403
+export SOURCE_DATE_EPOCH=1548340692
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/pyflakes
-cp LICENSE %{buildroot}/usr/share/doc/pyflakes/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/pyflakes
+cp LICENSE %{buildroot}/usr/share/package-licenses/pyflakes/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -116,8 +112,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/pyflakes/LICENSE
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pyflakes/LICENSE
 
 %files python
 %defattr(-,root,root,-)
