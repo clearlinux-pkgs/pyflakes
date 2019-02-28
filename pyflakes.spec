@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x0294A902A6830C07 (indigo@keybase.io)
 #
 Name     : pyflakes
-Version  : 2.1.0
-Release  : 53
-URL      : https://files.pythonhosted.org/packages/48/6d/7bfd617b21292397e10e24af4cf42947a359b0c425b66f194cf5d14b1444/pyflakes-2.1.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/48/6d/7bfd617b21292397e10e24af4cf42947a359b0c425b66f194cf5d14b1444/pyflakes-2.1.0.tar.gz
-Source99 : https://files.pythonhosted.org/packages/48/6d/7bfd617b21292397e10e24af4cf42947a359b0c425b66f194cf5d14b1444/pyflakes-2.1.0.tar.gz.asc
+Version  : 2.1.1
+Release  : 54
+URL      : https://files.pythonhosted.org/packages/52/64/87303747635c2988fcaef18af54bfdec925b6ea3b80bcd28aaca5ba41c9e/pyflakes-2.1.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/52/64/87303747635c2988fcaef18af54bfdec925b6ea3b80bcd28aaca5ba41c9e/pyflakes-2.1.1.tar.gz
+Source99 : https://files.pythonhosted.org/packages/52/64/87303747635c2988fcaef18af54bfdec925b6ea3b80bcd28aaca5ba41c9e/pyflakes-2.1.1.tar.gz.asc
 Summary  : passive checker of Python programs
 Group    : Development/Tools
 License  : MIT
@@ -73,14 +73,14 @@ python3 components for the pyflakes package.
 
 
 %prep
-%setup -q -n pyflakes-2.1.0
+%setup -q -n pyflakes-2.1.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548340692
+export SOURCE_DATE_EPOCH=1551396781
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -90,7 +90,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
 %install
-export SOURCE_DATE_EPOCH=1548340692
+export SOURCE_DATE_EPOCH=1551396781
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pyflakes
 cp LICENSE %{buildroot}/usr/share/package-licenses/pyflakes/LICENSE
