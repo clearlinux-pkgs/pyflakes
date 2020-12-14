@@ -4,7 +4,7 @@
 #
 Name     : pyflakes
 Version  : 2.2.0
-Release  : 69
+Release  : 70
 URL      : https://files.pythonhosted.org/packages/f1/e2/e02fc89959619590eec0c35f366902535ade2728479fc3082c8af8840013/pyflakes-2.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f1/e2/e02fc89959619590eec0c35f366902535ade2728479fc3082c8af8840013/pyflakes-2.2.0.tar.gz
 Summary  : passive checker of Python programs
