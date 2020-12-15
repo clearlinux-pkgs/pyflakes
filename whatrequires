@@ -2,6 +2,5 @@
 Pillow
 amazon-efs-utils
 flake8
-flake8-builtins
-pylama
+lutris
 python-language-server
