@@ -3,3 +3,4 @@ amazon-efs-utils
 flake8
 lutris
 python-language-server
+python-lsp-server
